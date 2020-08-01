@@ -17,6 +17,14 @@ const routes: Routes = [
             path: '',
             component: ClientesPage
           },
+          {
+            path: 'cliente-detalle/:idCliente',
+            loadChildren: () => import('../tabs/cliente-detalle/cliente-detalle.module').then(m => m.ClienteDetallePageModule)
+          },
+          {
+            path: 'cliente-cargar',
+            loadChildren: () => import('../tabs/cliente-cargar/cliente-cargar.module').then(m => m.ClienteCargarPageModule)
+          }
         ]
       },
       {
@@ -34,7 +42,7 @@ const routes: Routes = [
         pathMatch: 'full'
       }
     ]
-  },
+  }
 ];
 
 @NgModule({
