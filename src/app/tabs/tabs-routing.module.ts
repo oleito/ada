@@ -17,6 +17,10 @@ const routes: Routes = [
             path: '',
             component: ClientesPage
           },
+          {
+            path: 'cliente-detalle/:idCliente',
+            loadChildren: () => import('../tabs/cliente-detalle/cliente-detalle.module').then(m => m.ClienteDetallePageModule)
+          },
         ]
       },
       {

@@ -1,9 +1,56 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="login-logo">
+    <!-- <img src="assets/img/appicon.svg" alt="Ionic logo"> -->
+    <img src="https://via.placeholder.com/150x150.png?text=Logo" alt="Logo">
+  </div>
+
+  <form #loginForm="ngForm" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked" color="primary">Username</ion-label>
+        <ion-input name="username" type="text" spellcheck="false" autocapitalize="off" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger">
+        <p [hidden]="true" class="ion-padding-start">
+          Username is required
+        </p>
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="stacked" color="primary">Password</ion-label>
+        <ion-input name="password" type="password" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger">
+        <p [hidden]="true" class="ion-padding-start">
+          Password is required
+        </p>
+      </ion-text>
+      <ion-item>
+        <ion-checkbox slot="start"></ion-checkbox>
+        <ion-label>Recordar credenciales</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="onLogIn()" type="submit" expand="block">Iniciar session</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
 
 </ion-content>
