@@ -1,0 +1,38 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Registrar pago</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <ion-text class="saldo-actual" color="primary">
+    <h3>Saldo</h3>
+    <h1>$1600</h1>
+  </ion-text>
+  <form>
+    <hr>
+    <ion-list>
+      <ion-item>
+        <ion-label>Monto $:</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Seleccionar</ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Efectivo</ion-select-option>
+          <ion-select-option value="m">Mercado Pago</ion-select-option>
+          <ion-select-option value="f">Transferencia</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Archivar</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-button color="success" slot="secondary" (click)="onSubmitPago()" expand="block" shape="round">
+      Procesar pago
+    </ion-button>
+  </form>
+</ion-content>

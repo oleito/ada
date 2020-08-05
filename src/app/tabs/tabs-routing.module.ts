@@ -21,15 +21,6 @@ const routes: Routes = [
             path: 'cliente-detalle/:idCliente',
             loadChildren: () => import('../tabs/cliente-detalle/cliente-detalle.module').then(m => m.ClienteDetallePageModule)
           },
-          {
-            path: 'cliente-cargar',
-            loadChildren: () => import('../tabs/cliente-cargar/cliente-cargar.module').then(m => m.ClienteCargarPageModule)
-          },
-
-          {
-            path: 'cliente-pago/:idCliente',
-            loadChildren: () => import('../tabs/cliente-pago/cliente-pago.module').then(m => m.ClientePagoPageModule)
-          }
         ]
       },
       {
