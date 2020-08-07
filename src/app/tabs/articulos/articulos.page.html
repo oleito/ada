@@ -1,12 +1,43 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons *ngIf="!showSearchbar" slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Articulos</ion-title>
+    <ion-title *ngIf="!showSearchbar">Articulos</ion-title>
+    <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" (ionCancel)="showSearchbar = false"
+      placeholder="Buscar articulo">
+    </ion-searchbar>
+    <ion-buttons *ngIf="!showSearchbar" slot="end">
+      <ion-button (click)="showSearchbar = true">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  Articulos
+
+
+  <ion-row>
+    <ion-col size="6" *ngFor="let a of articulos">
+      <ion-card button routerLink="/app/tabs/articulos/articulo-detalle/1">
+        <ion-img src="https://via.placeholder.com/150x120"></ion-img>
+        <ion-card-content>
+          <ion-card-title>Titulo de la prenda</ion-card-title>
+        </ion-card-content>
+        <ion-row>
+          <ion-col size="10">
+            <ion-card-subtitle>$1600</ion-card-subtitle>
+          </ion-col>
+          <ion-col size="2" class="ion-no-padding">
+            <ion-button>
+              <ion-icon slot="icon-only" name="heart"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>

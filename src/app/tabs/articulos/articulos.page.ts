@@ -7,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticulosPage implements OnInit {
   showSearchbar = false;
-  
+
+
+  articulos: any[] = [
+    { nombre: "leandro" },
+    { nombre: "leandro" },
+    { nombre: "leandro" },
+    { nombre: "leandro" },
+    { nombre: "leandro" },
+    { nombre: "leandro" },
+    { nombre: "leandro" },
+    { nombre: "leandro" },
+    { nombre: "leandro" },
+  ]
+
   constructor() { }
 
   ngOnInit() {
+    console.log('articulos: ', this.articulos.length);
   }
+  cardClick() {
 
+  }
 }

@@ -8,6 +8,7 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 import { TabsPage } from './tabs.page';
 
 import { ClientesPageModule } from './clientes/clientes.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [

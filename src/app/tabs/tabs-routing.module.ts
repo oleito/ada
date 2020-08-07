@@ -1,9 +1,8 @@
-import { ArticulosPage } from './articulos/articulos.page';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
-import { ClientesPage } from './clientes/clientes.page';
+
 
 const routes: Routes = [
   {
@@ -15,11 +14,11 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            component: ClientesPage
+            loadChildren: () => import('./clientes/clientes.module').then(m => m.ClientesPageModule)
           },
           {
             path: 'cliente-detalle/:idCliente',
-            loadChildren: () => import('../tabs/cliente-detalle/cliente-detalle.module').then(m => m.ClienteDetallePageModule)
+            loadChildren: () => import('./cliente-detalle/cliente-detalle.module').then(m => m.ClienteDetallePageModule)
           },
         ]
       },
@@ -28,7 +27,11 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            component: ArticulosPage
+            loadChildren: () => import('./articulos/articulos.module').then(m => m.ArticulosPageModule)
+          },
+          {
+            path: 'articulo-detalle/:idArticulo',
+            loadChildren: () => import('./articulo-detalle/articulo-detalle.module').then( m => m.ArticuloDetallePageModule)
           },
         ]
       },
@@ -39,6 +42,7 @@ const routes: Routes = [
       }
     ]
   },
+
 ];
 
 @NgModule({
